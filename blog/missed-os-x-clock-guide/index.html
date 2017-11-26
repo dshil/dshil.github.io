@@ -63,9 +63,9 @@ When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a 
 
 
     
-    <link rel="stylesheet" href="http://dshil.github.io/css/reset.css?t=2017-11-26%2009%3a13%3a59.287539803%20%2b0300%20MSK">
-    <link rel="stylesheet" href="http://dshil.github.io/css/pygments.css?t=2017-11-26%2009%3a13%3a59.287539803%20%2b0300%20MSK">
-    <link rel="stylesheet" href="http://dshil.github.io/css/main.css?t=2017-11-26%2009%3a13%3a59.287539803%20%2b0300%20MSK">
+    <link rel="stylesheet" href="http://dshil.github.io/css/reset.css?t=2017-11-26%2009%3a50%3a46.385810143%20%2b0300%20MSK">
+    <link rel="stylesheet" href="http://dshil.github.io/css/pygments.css?t=2017-11-26%2009%3a50%3a46.385810143%20%2b0300%20MSK">
+    <link rel="stylesheet" href="http://dshil.github.io/css/main.css?t=2017-11-26%2009%3a50%3a46.385810143%20%2b0300%20MSK">
     
 
 
@@ -508,7 +508,7 @@ Using <a href="https://github.com/dshil/playground/tree/master/bench">Benchmarks
 <p>First, let&rsquo;s look at the diagram below to figure out what is performed
 underneath. As you remember XNU is all about IPC.</p>
 
-<p><img src="http://dshil.github.io/blog/missed-osx-clock-guide/host_get_clock_service.png" alt="host_get_clock_service" /></p>
+<p><img src="http://dshil.github.io/blog/missed-os-x-clock-guide/host_get_clock_service.png" alt="host_get_clock_service" /></p>
 
 <p>To deal with a clock service you need:</p>
 
@@ -522,7 +522,7 @@ underneath. As you remember XNU is all about IPC.</p>
 <p>Kernel allocates a clock_port for us, using which we&rsquo;ll obtain a required
 current time.</p>
 
-<p><img src="http://dshil.github.io/blog/missed-osx-clock-guide/clock_get_time.png" alt="clock_get_time" /></p>
+<p><img src="http://dshil.github.io/blog/missed-os-x-clock-guide/clock_get_time.png" alt="clock_get_time" /></p>
 
 <ul>
 <li>Put a port (clock_port), where to send the result, in a message.</li>
@@ -531,7 +531,7 @@ current time.</p>
 <li>Receive current time.</li>
 </ul>
 
-<p><img src="http://dshil.github.io/blog/missed-osx-clock-guide/mach_port_deallocate.png" alt="mach_port_deallocate" /></p>
+<p><img src="http://dshil.github.io/blog/missed-os-x-clock-guide/mach_port_deallocate.png" alt="mach_port_deallocate" /></p>
 
 <p>When we don&rsquo;t need this port we should deallocate it to avoid a <a href="https://robert.sesek.com/2012/1/debugging_mach_ports.htm://robert.sesek.com/2012/1/debugging_mach_ports.html">port leak
 problem</a>.</p>
