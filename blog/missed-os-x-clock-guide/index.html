@@ -14,13 +14,13 @@
 When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a dreamy to have the following routines:
  Receive current monotonically incrementing time value.">
 
-<meta property="og:title" content="Missed OSX Clocks Guide" />
+<meta property="og:title" content="Missed OS X Clock Guide" />
 <meta property="og:description" content="Table of contents
  Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Difference between various Mach Clock APIs Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
 When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a dreamy to have the following routines:
  Receive current monotonically incrementing time value." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://dshil.github.io/blog/missed-osx-clocks-guide/" />
+<meta property="og:url" content="http://dshil.github.io/blog/missed-os-x-clock-guide/" />
 
 
 
@@ -42,10 +42,10 @@ When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a 
 <title>
 
 
-     Missed OSX Clocks Guide 
+     Missed OS X Clock Guide 
 
 </title>
-<link rel="canonical" href="http://dshil.github.io/blog/missed-osx-clocks-guide/">
+<link rel="canonical" href="http://dshil.github.io/blog/missed-os-x-clock-guide/">
 
 
 
@@ -53,7 +53,7 @@ When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a 
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/darcula.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
 
 
 
@@ -63,9 +63,9 @@ When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a 
 
 
     
-    <link rel="stylesheet" href="http://dshil.github.io/css/reset.css?t=2017-11-26%2008%3a23%3a02.973336023%20%2b0300%20MSK">
-    <link rel="stylesheet" href="http://dshil.github.io/css/pygments.css?t=2017-11-26%2008%3a23%3a02.973336023%20%2b0300%20MSK">
-    <link rel="stylesheet" href="http://dshil.github.io/css/main.css?t=2017-11-26%2008%3a23%3a02.973336023%20%2b0300%20MSK">
+    <link rel="stylesheet" href="http://dshil.github.io/css/reset.css?t=2017-11-26%2009%3a11%3a39.799327469%20%2b0300%20MSK">
+    <link rel="stylesheet" href="http://dshil.github.io/css/pygments.css?t=2017-11-26%2009%3a11%3a39.799327469%20%2b0300%20MSK">
+    <link rel="stylesheet" href="http://dshil.github.io/css/main.css?t=2017-11-26%2009%3a11%3a39.799327469%20%2b0300%20MSK">
     
 
 
@@ -73,7 +73,7 @@ When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a 
 
 <link rel="shortcut icon"
 
-    href="http://dshil.github.io/img/leaf.ico"
+    href="http://dshil.github.io/img/favicon.ico"
 
 >
 
@@ -125,7 +125,7 @@ When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a 
         <div class="content">
 
         
-            <a href="github.com/dshil" target="_blank" rel="noopener"><img class="icon" src="http://dshil.github.io/img/github.svg" alt="github" /></a>
+            <a href="http://github.com/dshil" target="_blank" rel="noopener"><img class="icon" src="http://dshil.github.io/img/github.svg" alt="github" /></a>
         
 
         
@@ -166,7 +166,7 @@ When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a 
                 <div class="title-container">
                     <div class="page-heading">
 
-    Missed OSX Clocks Guide
+    Missed OS X Clock Guide
 
 </div>
 
@@ -217,11 +217,15 @@ a dreamy to have the following routines:</p>
 
 <p><strong>Thanks</strong></p>
 
-<p>I would like to thank my friends and colleagues:
-   - <a href="https://gavv.github.io/about/">Victor Gaydov</a> <a href="https://github.com/roc-project/roc">and his project</a>,
-     that was a reason why this article has appeared and for dozen helpful
-     advices how to improve this article.
-   - Eugene Golishev for advices how to improve readability.</p>
+<p>I would like to thank my friends and colleagues:</p>
+
+<ul>
+<li><a href="https://gavv.github.io/about/">Victor Gaydov</a> and <a href="https://github.com/roc-project/roc">his project</a>,
+ that was a reason why this article has appeared and for dozen helpful
+ advices how to improve this article.</li>
+<li><a href="https://github.com/eugulixes">Eugene Golishev</a> for advices how to improve
+ readability.</li>
+</ul>
 
 <h2 id="linux">Linux</h2>
 
@@ -277,75 +281,74 @@ Mach port is very similar to a Linux file descriptor.</p>
 
 <p><strong>API based on mach_timespec_t</strong></p>
 
-<p>By exploring <a href="https://github.com/opensource-apple/xnu/tree/10.12/osfmk/man">man pages in XNU repository</a>, we can figure out, that Mach API has something called clock_service.</p>
+<p>By exploring <a href="https://github.com/apple/darwin-xnu/tree/master/osfmk/man">man pages in XNU repository</a>, we can figure out, that Mach API has something called clock_service.</p>
 
 <p>Let&rsquo;s explore what we can do with it:</p>
 
-<pre><code class="language-c">
-    #include &lt;mach/mach.h&gt;      /* host_get_clock_service */
-    #include &lt;mach/clock.h&gt;     /* clock_get_time */
-    #include &lt;mach/mach_error.h&gt; /* error handling */
+<pre><code class="language-c">#include &lt;mach/mach.h&gt;      /* host_get_clock_service */
+#include &lt;mach/clock.h&gt;     /* clock_get_time */
+#include &lt;mach/mach_error.h&gt; /* error handling */
 
-    kern_return_t err = KERN_SUCCESS;
-    clock_serv_t host_clock;
+kern_return_t err = KERN_SUCCESS;
+clock_serv_t host_clock;
 
-    // mach/clock_types.h
-    //
-    // kern_return_t
-    // host_get_clock_service(
-    //     host_t			host,
-    //     clock_id_t		clock_id,
-    //     clock_t			*clock)
-    //
-    // Reserved clock id values for default clocks.
-    //
-    // #define SYSTEM_CLOCK	    	0
-    // #define CALENDAR_CLOCK		1
-    // #define REALTIME_CLOCK		0
-    //
-    // Where `clock_id` is the identification of the desired kernel clock with
-    // possible values:
-    //
-    //    - REALTIME_CLOCK stands for a time since a boot time. It has the same
-    //      semantic as CLOCK_MONOTONIC.
-    //
-    //    - BATTERY_CLOCK - (typically) low resolution clock that survives
-    //      power failures or service outages.
-    //
-    //    - HIGHRES_CLOCK - a high resolution clock.
-    //
-    // This function returns a send right to a kernel clock's service port.
-    err = host_get_clock_service(mach_host_self(), SYSTEM_CLOCK, &amp;host_clock);
-    if (err != KERN_SUCCESS) {
-        mach_error(&quot;host_get_clock_service: &quot;, err);
-        exit(EXIT_FAILURE);
-    }
+// mach/clock_types.h
+//
+// kern_return_t
+// host_get_clock_service(
+//     host_t			host,
+//     clock_id_t		clock_id,
+//     clock_t			*clock)
+//
+// Reserved clock id values for default clocks.
+//
+// #define SYSTEM_CLOCK	    	0
+// #define CALENDAR_CLOCK		1
+// #define REALTIME_CLOCK		0
+//
+// Where `clock_id` is the identification of the desired kernel clock with
+// possible values:
+//
+//    - REALTIME_CLOCK stands for a time since a boot time. It has the same
+//      semantic as CLOCK_MONOTONIC.
+//
+//    - BATTERY_CLOCK - (typically) low resolution clock that survives
+//      power failures or service outages.
+//
+//    - HIGHRES_CLOCK - a high resolution clock.
+//
+// This function returns a send right to a kernel clock's service port.
+err = host_get_clock_service(mach_host_self(), SYSTEM_CLOCK, &amp;host_clock);
+if (err != KERN_SUCCESS) {
+    mach_error(&quot;host_get_clock_service: &quot;, err);
+    exit(EXIT_FAILURE);
+}
 
-    // struct mach_timespec {
-    //    unsigned int  tv_sec;         /* seconds */
-    //    clock_res_t   tv_nsec;    /* nanoseconds */
-    // };
-    // typedef struct mach_timespec mach_timespec_t;
-    //
-    // As you can see, mach_timespec_t is the same as timespec in Linux.
-    mach_timespec_t now;
+// struct mach_timespec {
+//    unsigned int  tv_sec;         /* seconds */
+//    clock_res_t   tv_nsec;    /* nanoseconds */
+// };
+// typedef struct mach_timespec mach_timespec_t;
+//
+// As you can see, mach_timespec_t is the same as timespec in Linux.
+mach_timespec_t now;
 
-    err = clock_get_time(host_clock, &amp;now);
-    if (err != KERN_SUCCESS) {
-        mach_error(&quot;clock_get_time: &quot;, err);
-        exit(EXIT_FAILURE);
-    }
+err = clock_get_time(host_clock, &amp;now);
+if (err != KERN_SUCCESS) {
+    mach_error(&quot;clock_get_time: &quot;, err);
+    exit(EXIT_FAILURE);
+}
 
-    // We should deallocate the port returned by host_get_clock_service,
-    // because we no longer need it.
-    //
-    // You should be careful with mach ports allocation and deallocation,
-    // because it is usually can cause the ports leak problem.
-    err = mach_port_deallocate(mach_task_self(), host_clock);
-    if (err != KERN_SUCCESS) {
-        mach_error(&quot;mach_port_deallocate: &quot;, err);
-        exit(EXIT_FAILURE);
-    }
+// We should deallocate the port returned by host_get_clock_service,
+// because we no longer need it.
+//
+// You should be careful with mach ports allocation and deallocation,
+// because it is usually can cause the ports leak problem.
+err = mach_port_deallocate(mach_task_self(), host_clock);
+if (err != KERN_SUCCESS) {
+    mach_error(&quot;mach_port_deallocate: &quot;, err);
+    exit(EXIT_FAILURE);
+}
 </code></pre>
 
 <p>Mach API also provides a system call similar to <code>clock_nanosleep</code>. It is called
@@ -385,28 +388,29 @@ nanoseconds.</p>
 <p>Example of receiving current time in nanoseconds using <code>mach_absolute_time</code>:</p>
 
 <pre><code class="language-c">
-    #include &lt;mach/mach_time.h&gt; /* mach_absolute_time */
+#include &lt;mach/mach_time.h&gt; /* mach_absolute_time */
 
-    mach_timebase_info_data_t info;
+mach_timebase_info_data_t info;
 
-    kern_return_t ret = mach_timebase_info(&amp;info);
-    if (ret != KERN_SUCCESS) {
-        // Some kind of disaster...
-    }
+kern_return_t ret = mach_timebase_info(&amp;info);
+if (ret != KERN_SUCCESS) {
+    // Some kind of disaster...
+}
 
-    // You should cache this value to avoid calculating it each time.
-    double steady_factor = (double) info.numer / info.denom;
+// You should cache this value to avoid calculating it each time.
+double steady_factor = (double) info.numer / info.denom;
 
-    uint64_t now_ns = mach_absolute_time() * steady_factor;
+uint64_t now_ns = mach_absolute_time() * steady_factor;
 </code></pre>
 
 <h2 id="difference-between-various-mach-clock-apis">Difference between various Mach Clock APIs</h2>
 
 <p>Let&rsquo;s try to receive current time using both APIs:</p>
 
-<pre><code>- API based on `mach_timespec_t`: 556680752418861 ns
-- API based on `mach_absolute_time`: 55668752378055 ns
-</code></pre>
+<ul>
+<li><code>mach_timespec_t</code>: 556680752418861 ns</li>
+<li><code>mach_absolute_time</code>: 55668752378055 ns</li>
+</ul>
 
 <p>Both values belongs to the same time domain.</p>
 
@@ -417,7 +421,7 @@ nanoseconds.</p>
 You can review <a href="https://opensource.apple.com/source/Libc/Libc-320.1.3/i386/mach/mach_absolute_time.c">source</a>
 for more details.</p></li>
 
-<li><p>API based on <code>mach_timespec_t</code> uses.</p></li>
+<li><p>API based on <code>mach_timespec_t</code> uses RDTSC through Mach ports.</p></li>
 </ul>
 
 <h2 id="deprecated-mach-clock-api">Deprecated Mach Clock API</h2>
@@ -433,30 +437,78 @@ current time you need 3 system calls:</p>
 
 <p><code>host_get_clock_service</code> and <code>mach_port_deallocate</code> usually will be called only
 once. We need to value the cost of <code>clock_get_time</code>.
-Using <a href="https://github.com/dshil/playground/tree/master/bench">Benchmarks for time-related operations for OS X and Linux</a>. we can see the difference.</p>
+Using <a href="https://github.com/dshil/playground/tree/master/bench">Benchmarks for time-related operations for OS X and Linux</a> we can see the difference.</p>
 
 <p><code>mach_absolute_time</code>:</p>
 
-<p>| function name      | number of calls | avg (ns/call) |
-   |&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;|
-   | mach_absolute_time | 1000            | 35            |
-   | mach_absolute_time | 1000000         | 36            |
-   | mach_absolute_time | 5000000         | 37            |</p>
+<table>
+<thead>
+<tr>
+<th>function name</th>
+<th>number of calls</th>
+<th>avg (ns/call)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>mach_absolute_time</td>
+<td>1000</td>
+<td>35</td>
+</tr>
+
+<tr>
+<td>mach_absolute_time</td>
+<td>1000000</td>
+<td>36</td>
+</tr>
+
+<tr>
+<td>mach_absolute_time</td>
+<td>5000000</td>
+<td>37</td>
+</tr>
+</tbody>
+</table>
 
 <p><code>clock_get_time</code>:</p>
 
-<p>| function name  | number of calls | avg (ns/call) |
-   |&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;|
-   | clock_get_time | 1000            | 839           |
-   | clock_get_time | 1000000         | 832           |
-   | clock_get_time | 5000000         | 813           |</p>
+<table>
+<thead>
+<tr>
+<th>function name</th>
+<th>number of calls</th>
+<th>avg (ns/call)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>clock_get_time</td>
+<td>1000</td>
+<td>839</td>
+</tr>
+
+<tr>
+<td>clock_get_time</td>
+<td>1000000</td>
+<td>832</td>
+</tr>
+
+<tr>
+<td>clock_get_time</td>
+<td>5000000</td>
+<td>813</td>
+</tr>
+</tbody>
+</table>
 
 <p>The cost of system call is important, but it&rsquo;s not a key problem here.</p>
 
 <p>First, let&rsquo;s look at the diagram below to figure out what is performed
 underneath. As you remember XNU is all about IPC.</p>
 
-<p><img src="host_get_clock_service.png" alt="host_get_clock_service" /></p>
+<p><img src="http://dshil.github.io/blog/missed-osx-clock-guide/host_get_clock_service.png" alt="host_get_clock_service" /></p>
 
 <p>To deal with a clock service you need:</p>
 
@@ -470,7 +522,7 @@ underneath. As you remember XNU is all about IPC.</p>
 <p>Kernel allocates a clock_port for us, using which we&rsquo;ll obtain a required
 current time.</p>
 
-<p><img src="clock_get_time.png" alt="clock_get_time" /></p>
+<p><img src="http://dshil.github.io/blog/missed-osx-clock-guide/clock_get_time.png" alt="clock_get_time" /></p>
 
 <ul>
 <li>Put a port (clock_port), where to send the result, in a message.</li>
@@ -479,7 +531,7 @@ current time.</p>
 <li>Receive current time.</li>
 </ul>
 
-<p><img src="mach_port_deallocate.png" alt="mach_port_deallocate" /></p>
+<p><img src="http://dshil.github.io/blog/missed-osx-clock-guide/mach_port_deallocate.png" alt="mach_port_deallocate" /></p>
 
 <p>When we don&rsquo;t need this port we should deallocate it to avoid a <a href="https://robert.sesek.com/2012/1/debugging_mach_ports.htm://robert.sesek.com/2012/1/debugging_mach_ports.html">port leak
 problem</a>.</p>
@@ -495,7 +547,7 @@ our &ldquo;high precision time management&rdquo; will lose a precision.</p>
 <ul>
 <li><a href="http://web.archive.org/web/20100517095152/http://www.wand.net.nz/~smr26/wordpress/2009/01/19/monotonic-time-in-mac-os-x/comment-page-1/">Monotonic time in Mac OS X</a></li>
 <li><a href="https://github.com/joyent/libuv/pull/1325">libuv fight with OS X clock API</a></li>
-<li><a href="http://web.archive.org/web/20100501115556/http://le-depotoir.googlecode.com:80/svn/trunk/misc/clock_gettime_stub.c">clock_gettime for OS X</a>.</li>
+<li><a href="http://web.archive.org/web/20100501115556/http://le-depotoir.googlecode.com:80/svn/trunk/misc/clock_gettime_stub.c">clock_gettime for OS X</a></li>
 <li><a href="http://web.eecs.utk.edu/~qcao1/cs560/papers/mach.pdf">Mach overview</a></li>
 <li><a href="https://developer.apple.com/library/content/documentation/Darwin/Conceptual/KernelProgramming/About/About.html">OS X kernel guide lines</a></li>
 <li><a href="http://www.osxbook.com">Mac OS X Internals book</a></li>
@@ -521,10 +573,6 @@ our &ldquo;high precision time management&rdquo; will lose a precision.</p>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/c.min.js"></script>
   
 
   <script type="text/javascript">

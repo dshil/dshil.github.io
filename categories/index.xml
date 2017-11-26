@@ -2,12 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Dmitriy Shilin</title>
-    <link>dshil.github.io/categories/</link>
+    <link>http://dshil.github.io/categories/</link>
     <description>Recent content in Categories on Dmitriy Shilin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
+    <copyright>Dmitriy Shilin</copyright>
     
-	<atom:link href="dshil.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://dshil.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
