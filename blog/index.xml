@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dmitriy Shilin</title>
-    <link>dshil.github.io/</link>
-    <description>Recent content on Dmitriy Shilin</description>
+    <title>Blog on Dmitriy Shilin</title>
+    <link>dshil.github.io/blog/</link>
+    <description>Recent content in Blog on Dmitriy Shilin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 26 Nov 2017 08:03:19 +0300</lastBuildDate>
     
-	<atom:link href="dshil.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="dshil.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,16 +21,6 @@
  Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Difference between various Mach Clock APIs Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
 When it comes to high-resolution time management in OS X wouldn&amp;rsquo;t it be a dreamy to have the following routines:
  Receive current monotonically incrementing time value.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>dshil.github.io/about/</link>
-      <pubDate>Sun, 26 Nov 2017 07:59:46 +0300</pubDate>
-      
-      <guid>dshil.github.io/about/</guid>
-      <description>All my networks profile start with a phrase: &amp;ldquo;I&amp;rsquo;m a ghost software engineer and Linux lover&amp;rdquo;. I passion about building stuff with other talented people. I believe in an open-source way of building very complex systems. By open-source I mean the full autonomy of developers when people are combined together in some &amp;ldquo;tribes&amp;rdquo; to build something great.
-Running is a big part of my life. It helps me to overcome long-term goals and understand that each problem can be solved, that is very important on daily basis of a software engineer.</description>
     </item>
     
   </channel>
