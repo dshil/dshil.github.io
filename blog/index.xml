@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Dmitriy Shilin</title>
-    <link>http://dshil.github.io/blog/</link>
+    <link>/blog/</link>
     <description>Recent content in Blog on Dmitriy Shilin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Dmitriy Shilin</copyright>
     <lastBuildDate>Sun, 26 Nov 2017 08:03:19 +0300</lastBuildDate>
     
-	<atom:link href="http://dshil.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Missed OS X Clock Guide</title>
-      <link>http://dshil.github.io/blog/missed-os-x-clock-guide/</link>
+      <link>/blog/missed-os-x-clock-guide/</link>
       <pubDate>Sun, 26 Nov 2017 08:03:19 +0300</pubDate>
       
-      <guid>http://dshil.github.io/blog/missed-os-x-clock-guide/</guid>
+      <guid>/blog/missed-os-x-clock-guide/</guid>
       <description>Table of contents
  Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Difference between various Mach Clock APIs Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
 When it comes to high-resolution time management in OS X wouldn&amp;rsquo;t it be a dreamy to have the following routines:
