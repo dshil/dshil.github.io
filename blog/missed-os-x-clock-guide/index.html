@@ -10,15 +10,15 @@
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Dmitriy Shilin">
 <meta name="description" content="Table of contents
- Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Difference between various Mach Clock APIs Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
+ Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
 When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a dreamy to have the following routines:
- Receive current monotonically incrementing time value.">
+ Receive current monotonically incrementing time value. Sleep for a specified interval.">
 
 <meta property="og:title" content="Missed OS X Clock Guide" />
 <meta property="og:description" content="Table of contents
- Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Difference between various Mach Clock APIs Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
+ Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
 When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a dreamy to have the following routines:
- Receive current monotonically incrementing time value." />
+ Receive current monotonically incrementing time value. Sleep for a specified interval." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dshil.github.io/blog/missed-os-x-clock-guide/" />
 
@@ -63,9 +63,9 @@ When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a 
 
 
     
-    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2017-11-26%2009%3a57%3a29.441088791%20%2b0300%20MSK">
-    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2017-11-26%2009%3a57%3a29.441088791%20%2b0300%20MSK">
-    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2017-11-26%2009%3a57%3a29.441088791%20%2b0300%20MSK">
+    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2017-11-26%2010%3a58%3a47.896511103%20%2b0300%20MSK">
+    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2017-11-26%2010%3a58%3a47.896511103%20%2b0300%20MSK">
+    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2017-11-26%2010%3a58%3a47.896511103%20%2b0300%20MSK">
     
 
 
@@ -192,7 +192,6 @@ When it comes to high-resolution time management in OS X wouldn&rsquo;t it be a 
 <li><a href="#linux">High resolution time management in Linux</a></li>
 <li><a href="#mach-kernel">Mach Kernel</a></li>
 <li><a href="#mach-clock-api">Mach Clock API</a></li>
-<li><a href="#difference-between-various-mach-clock-api">Difference between various Mach Clock APIs</a></li>
 <li><a href="#deprecated-mach-clock-api">Deprecated Mach Clock API</a></li>
 <li><a href="#links">Links</a></li>
 </ul>
@@ -223,8 +222,6 @@ a dreamy to have the following routines:</p>
 <li><a href="https://gavv.github.io/about/">Victor Gaydov</a> and <a href="https://github.com/roc-project/roc">his project</a>,
  that was a reason why this article has appeared and for dozen helpful
  advices how to improve this article.</li>
-<li><a href="https://github.com/eugulixes">Eugene Golishev</a> for advices how to improve
- readability.</li>
 </ul>
 
 <h2 id="linux">Linux</h2>
@@ -352,7 +349,7 @@ if (err != KERN_SUCCESS) {
 </code></pre>
 
 <p>Mach API also provides a system call similar to <code>clock_nanosleep</code>. It is called
-<a href="https://github.com/opensource-apple/xnu/blob/10.12/osfmk/kern/clock_oldops.c">clock_sleep</a>.</p>
+<a href="https://github.com/apple/darwin-xnu/blob/master/osfmk/kern/clock_oldops.c#L493">clock_sleep</a>.</p>
 
 <p>For more details about Mach API I recommend to use the following resources:</p>
 
@@ -403,7 +400,7 @@ double steady_factor = (double) info.numer / info.denom;
 uint64_t now_ns = mach_absolute_time() * steady_factor;
 </code></pre>
 
-<h2 id="difference-between-various-mach-clock-apis">Difference between various Mach Clock APIs</h2>
+<p><strong>Mach APIs under the hood</strong></p>
 
 <p>Let&rsquo;s try to receive current time using both APIs:</p>
 
@@ -413,8 +410,6 @@ uint64_t now_ns = mach_absolute_time() * steady_factor;
 </ul>
 
 <p>Both values belongs to the same time domain.</p>
-
-<p><strong>Mach APIs under the hood</strong></p>
 
 <ul>
 <li><p>API based on <code>mach_absolute_time</code> uses <a href="https://en.wikipedia.org/wiki/Time_Stamp_Counter">RDTSC</a> underneath.

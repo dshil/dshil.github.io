@@ -19,9 +19,9 @@
       
       <guid>https://dshil.github.io/blog/missed-os-x-clock-guide/</guid>
       <description>Table of contents
- Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Difference between various Mach Clock APIs Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
+ Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
 When it comes to high-resolution time management in OS X wouldn&amp;rsquo;t it be a dreamy to have the following routines:
- Receive current monotonically incrementing time value.</description>
+ Receive current monotonically incrementing time value. Sleep for a specified interval.</description>
     </item>
     
     <item>
