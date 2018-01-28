@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Dmitriy Shilin</copyright>
-    <lastBuildDate>Sun, 26 Nov 2017 08:03:19 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jan 2018 10:09:48 +0300</lastBuildDate>
     
 	<atom:link href="https://dshil.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Talks</title>
+      <link>https://dshil.github.io/talks/</link>
+      <pubDate>Sun, 28 Jan 2018 10:09:48 +0300</pubDate>
+      
+      <guid>https://dshil.github.io/talks/</guid>
+      <description> Go in TradingView  </description>
+    </item>
     
     <item>
       <title>Missed OS X Clock Guide</title>
