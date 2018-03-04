@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Dmitriy Shilin</copyright>
-    <lastBuildDate>Sun, 28 Jan 2018 10:09:48 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 04 Mar 2018 05:56:39 +0300</lastBuildDate>
     
 	<atom:link href="https://dshil.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Email</title>
+      <link>https://dshil.github.io/notes/email/</link>
+      <pubDate>Sun, 04 Mar 2018 05:56:39 +0300</pubDate>
+      
+      <guid>https://dshil.github.io/notes/email/</guid>
+      <description>Communication: back in time
+Most of the software companies have migrated to the very convenient and cute messenger, called Slack.
+To be the decent man I also liked it for the first time. It gave me the feeling of involving in the whole company life. I was a superhero observing different tasks, simultaneously solving different issues.
+But once I&amp;rsquo;ve realized that it&amp;rsquo;s so convenient that I was simply chatting with the college about random stuff.</description>
+    </item>
     
     <item>
       <title>Talks</title>
@@ -31,15 +43,6 @@
  Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
 When it comes to high-resolution time management in OS X wouldn&amp;rsquo;t it be a dreamy to have the following routines:
  Receive current monotonically incrementing time value. Sleep for a specified interval.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://dshil.github.io/about/</link>
-      <pubDate>Sun, 26 Nov 2017 07:59:46 +0300</pubDate>
-      
-      <guid>https://dshil.github.io/about/</guid>
-      <description>Various notes about software development.</description>
     </item>
     
   </channel>
