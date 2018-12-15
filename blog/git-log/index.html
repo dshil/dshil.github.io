@@ -11,7 +11,7 @@
 <meta name="author" content="Dmitriy Shilin">
 <meta name="description" content="I always do git log and explore what changes were made by other developers. It is my habit and I don&rsquo;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy.">
 
-<meta property="og:title" content="git log" />
+<meta property="og:title" content="Git log" />
 <meta property="og:description" content="I always do git log and explore what changes were made by other developers. It is my habit and I don&rsquo;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dshil.github.io/blog/git-log/" /><meta property="article:published_time" content="2018-12-15T07:37:30&#43;03:00"/>
@@ -21,7 +21,7 @@
 <title>
 
 
-     git log 
+     Git log 
 
 </title>
 <link rel="canonical" href="https://dshil.github.io/blog/git-log/">
@@ -42,9 +42,9 @@
 
 
     
-    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2018-12-15%2009%3a05%3a30.823231861%20%2b0300%20MSK%20m%3d%2b0.071393403">
-    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2018-12-15%2009%3a05%3a30.823231861%20%2b0300%20MSK%20m%3d%2b0.071393403">
-    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2018-12-15%2009%3a05%3a30.823231861%20%2b0300%20MSK%20m%3d%2b0.071393403">
+    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2018-12-15%2009%3a16%3a19.456073542%20%2b0300%20MSK%20m%3d%2b0.062586878">
+    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2018-12-15%2009%3a16%3a19.456073542%20%2b0300%20MSK%20m%3d%2b0.062586878">
+    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2018-12-15%2009%3a16%3a19.456073542%20%2b0300%20MSK%20m%3d%2b0.062586878">
     
 
 
@@ -145,7 +145,7 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-    git log
+    Git log
 
 </div>
 
@@ -206,12 +206,12 @@ people, etc.</li>
 <h2 id="find-your-git-model">Find your git model</h2>
 
 <p>There are a huge amount of ways how you can organize your life with git but
-I&rsquo;d pick two very simple and commonly used.</p>
+I&rsquo;ll explore two very simple and commonly used.</p>
 
 <h3 id="git-only-model">Git only model</h3>
 
 <ul>
-<li>Each team member writes very-informative and understandable commit messages.</li>
+<li>Each team member writes very informative and understandable commit messages.</li>
 <li>Each commit may contain some reference to the external discussions: mailing
 lists, bugzilla (optional).</li>
 </ul>
@@ -234,7 +234,7 @@ arguments are separated by newlines rather than spaces.
 
 [1]: https://somereference
 
-Reviewed-by:
+Reviewed-by: FooMan
 </code></pre>
 
 <h3 id="mixed-model-git-bugzilla-mailing-lists">Mixed Model (Git + Bugzilla + Mailing Lists)</h3>
@@ -256,8 +256,6 @@ Resolves: #tdf299
 commit messages with a lot of tech details and interesting things but
 usually it&rsquo;s hard to put all info into one commit message because of
 different discussions in ML (mailing list), issue tracker, etc.</p>
-
-<hr />
 
 <h2 id="not-all-have-to-be-masters">Not all have to be masters</h2>
 
@@ -283,7 +281,7 @@ right - our own.</li>
 
 <ul>
 <li>Young developers learn how to write clean and simple code from the more
-experienced developer.</li>
+experienced developers.</li>
 <li>Each commit message takes more time to write.</li>
 <li>Each changes takes more time before being merged into the main line.</li>
 <li>Procedure of code rereading before merging it allows to fix some typos,
@@ -293,29 +291,21 @@ simplify things, remove debug messages.</li>
 <h2 id="instead-of-conclusion">Instead of conclusion:</h2>
 
 <p>There are a lot of discussions, cargo cults around successful git models.
-I just analyze a little bit both approaches from the previous experience of
-working in different companies and contributing to various open-source
-projects. I enforce that all changes must be reviewed before merging to the
+I just analyze some approaches from the previous experience of working in
+different companies and contributing to various open-source projects.
+I enforce that all changes must be reviewed before merging to the
 main line. But is is my rule and you can be probably very happy without
 this annoying review. Try different approaches and find which of them
-is more suitable in your team.</p>
+is more suitable for your team.</p>
 
 <p>I don&rsquo;t provide the complete template of &ldquo;good commit message&rdquo; because
 there are resources that did it for me. I&rsquo;d highly recommend you to
-read [1] and [2].</p>
+read <a href="https://github.com/torvalds/subsurface-for-dirk/blob/a48494d2fbed58c751e9b7e8fbff88582f9b2d02/README#L88">Linus rules for commit messages</a> and <a href="https://chris.beams.io/posts/git-commit/">Why commit
+message is so important</a>.</p>
 
 <p>After all, all you have left from the developer is a commit message. And when
 bad days come I hope this message will help you to solve the most annoying
 bug.</p>
-
-<h2 id="resources">Resources</h2>
-
-<p>[1] Linus provides a definition of a good commit message.
-[2] Contains more words and examples about why it is so important in
-  long term.</p>
-
-<p>[1] <a href="https://github.com/torvalds/subsurface-for-dirk/blob/a48494d2fbed58c751e9b7e8fbff88582f9b2d02/README#L88">https://github.com/torvalds/subsurface-for-dirk/blob/a48494d2fbed58c751e9b7e8fbff88582f9b2d02/README#L88</a>
-[2] <a href="https://chris.beams.io/posts/git-commit/">https://chris.beams.io/posts/git-commit/</a></p>
 
                 <br>
 		<p class="back-to-posts"><a href="https://dshil.github.io/blog/">Back to posts</a></p>
