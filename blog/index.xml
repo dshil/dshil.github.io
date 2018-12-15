@@ -6,10 +6,21 @@
     <description>Recent content in Blog on Dmitriy Shilin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 26 Nov 2017 08:03:19 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 04 Mar 2018 05:56:39 +0300</lastBuildDate>
     
 	<atom:link href="https://dshil.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Communication: back in time</title>
+      <link>https://dshil.github.io/blog/communication-back-in-time/</link>
+      <pubDate>Sun, 04 Mar 2018 05:56:39 +0300</pubDate>
+      
+      <guid>https://dshil.github.io/blog/communication-back-in-time/</guid>
+      <description>Most of the software companies have migrated to the very convenient and cute messenger, called Slack.
+To be the decent man I also liked it for a first time. It gave me the feeling of involving in the whole company life. I was a superhero observing different tasks, simultaneously solving different issues.
+Once I realized that it&amp;rsquo;s so convenient that I was simply chatting with the college about random stuff. In that evening I had a bell ringing in my head that something wrong with the model that most developers definitely love.</description>
+    </item>
     
     <item>
       <title>Missed OS X Clock Guide</title>
