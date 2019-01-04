@@ -6,10 +6,20 @@
     <description>Recent content on Dmitriy Shilin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 20 Dec 2018 09:08:25 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 30 Dec 2018 15:13:34 +0300</lastBuildDate>
     
 	<atom:link href="https://dshil.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git: tuning performance on Windows</title>
+      <link>https://dshil.github.io/blog/git-tuning-performance-on-windows/</link>
+      <pubDate>Sun, 30 Dec 2018 15:13:34 +0300</pubDate>
+      
+      <guid>https://dshil.github.io/blog/git-tuning-performance-on-windows/</guid>
+      <description>Preface Internet was designed in a such way that almost nobody remember the days when there is no internet. People just got used to this phenomenon, like an air but also there are some men that remember that days and we should protect them as the UNESCO area. This feeling that the internet has been at all times shows that it was very well-designed and later - implemented.
+In that days there wasn&amp;rsquo;t such thing as a revision control system.</description>
+    </item>
     
     <item>
       <title>CV</title>
