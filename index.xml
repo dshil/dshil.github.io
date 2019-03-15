@@ -6,10 +6,19 @@
     <description>Recent content on Dmitriy Shilin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 17 Feb 2019 06:27:48 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2019 09:53:26 +0300</lastBuildDate>
     
 	<atom:link href="https://dshil.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux: fight for better health</title>
+      <link>https://dshil.github.io/blog/linux-fight-for-better-health/</link>
+      <pubDate>Fri, 15 Mar 2019 09:53:26 +0300</pubDate>
+      
+      <guid>https://dshil.github.io/blog/linux-fight-for-better-health/</guid>
+      <description>Preface For a long time I was working in the office in the front of my lovely Dell 24 Monitor but recently I have been starting working more and more in front of my laptop. It is MacBook Pro 17 Late 2011, very old guy with Fedora on a board. Suddenly I started having more and more headaches. It was sad and I decided to go to a doctor. Well, it was interesting, we made a tons of analysis, check eyes, check vessels of the brain, check neck and a lot more and surprisingly we did not find anything interesting.</description>
+    </item>
     
     <item>
       <title>Projects</title>
