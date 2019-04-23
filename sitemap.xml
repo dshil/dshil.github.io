@@ -3,8 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dshil.github.io/blog/</loc>
+    <lastmod>2019-03-16T09:53:26+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dshil.github.io/</loc>
+    <lastmod>2019-03-16T09:53:26+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://dshil.github.io/blog/linux-fight-for-better-health/</loc>
-    <lastmod>2019-03-15T09:53:26+03:00</lastmod>
+    <lastmod>2019-03-16T09:53:26+03:00</lastmod>
   </url>
   
   <url>
@@ -38,19 +50,7 @@
   </url>
   
   <url>
-    <loc>https://dshil.github.io/blog/</loc>
-    <lastmod>2019-03-15T09:53:26+03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://dshil.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dshil.github.io/</loc>
-    <lastmod>2019-03-15T09:53:26+03:00</lastmod>
     <priority>0</priority>
   </url>
   
