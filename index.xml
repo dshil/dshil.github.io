@@ -26,7 +26,7 @@
       <pubDate>Sun, 17 Feb 2019 06:27:48 +0300</pubDate>
       
       <guid>https://dshil.github.io/projects/</guid>
-      <description> LibreOffice  LibreOffice Contribution profile Mainly used: C++  ROC  Real-time audio streaming over unreliable network Contribution profile Mainly used: C++  GITS  Web-based terminal emulator Contribution profile Mainly used: Python  </description>
+      <description> ROC  Real-time audio streaming over unreliable network Contribution profile Mainly used: C++  LibreOffice  LibreOffice Contribution profile Mainly used: C++  GITS  Web-based terminal emulator Contribution profile Mainly used: Python  </description>
     </item>
     
     <item>
@@ -36,15 +36,6 @@
       
       <guid>https://dshil.github.io/blog/git-tuning-performance-on-windows/</guid>
       <description>Preface An internet was designed in a such way that almost nobody remembers the days when there is no internet. People just got used to this phenomenon, like an air, in the same way, there are some people who remember those days and we should protect them as the UNESCO area. This feeling that the internet has been at all times shows that it was very well-designed and later - implemented.</description>
-    </item>
-    
-    <item>
-      <title>Git log</title>
-      <link>https://dshil.github.io/blog/git-log/</link>
-      <pubDate>Sat, 15 Dec 2018 07:37:30 +0300</pubDate>
-      
-      <guid>https://dshil.github.io/blog/git-log/</guid>
-      <description>I always do git log and explore what changes were made by other developers. It is my habit and I don&amp;rsquo;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy.</description>
     </item>
     
     <item>

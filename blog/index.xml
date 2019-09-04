@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>Git log</title>
-      <link>https://dshil.github.io/blog/git-log/</link>
-      <pubDate>Sat, 15 Dec 2018 07:37:30 +0300</pubDate>
-      
-      <guid>https://dshil.github.io/blog/git-log/</guid>
-      <description>I always do git log and explore what changes were made by other developers. It is my habit and I don&amp;rsquo;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy.</description>
-    </item>
-    
-    <item>
       <title>Ancient mails</title>
       <link>https://dshil.github.io/blog/ancient-mails/</link>
       <pubDate>Sun, 04 Mar 2018 05:56:39 +0300</pubDate>
