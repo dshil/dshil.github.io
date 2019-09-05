@@ -43,9 +43,9 @@
 
 
     
-    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2019-09-04%2009%3a06%3a39.509576744%20%2b0300%20MSK%20m%3d%2b0.037071182">
-    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2019-09-04%2009%3a06%3a39.509576744%20%2b0300%20MSK%20m%3d%2b0.037071182">
-    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2019-09-04%2009%3a06%3a39.509576744%20%2b0300%20MSK%20m%3d%2b0.037071182">
+    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2019-09-05%2012%3a58%3a39.33214909%20%2b0300%20MSK%20m%3d%2b0.062699883">
+    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2019-09-05%2012%3a58%3a39.33214909%20%2b0300%20MSK%20m%3d%2b0.062699883">
+    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2019-09-05%2012%3a58%3a39.33214909%20%2b0300%20MSK%20m%3d%2b0.062699883">
     
 
 
@@ -188,7 +188,7 @@ quickly. Happy owners of the Intel GPU card <a href="https://wiki.archlinux.org/
 
 <p>For the first time, I checked the current PWM frequency and it was 0x0:</p>
 
-<pre><code class="language-sh">sudo intel_reg_read 0xC8254
+<pre><code class="language-sh">sudo intel_reg read 0xC8254
 0x0
 </code></pre>
 
@@ -200,7 +200,7 @@ when we work in front of a display with a brightness which differs from the
 maximum (PWM will be eliminated automatically for the maximum brightness).
 You just need to choose the desired PWM frequency:</p>
 
-<pre><code class="language-sh">sudo intel_reg_write 0xC8254 0x3d103d1 # 1000Hz in my case
+<pre><code class="language-sh">sudo intel_reg write 0xC8254 0x3d103d1 # 1000Hz in my case
 </code></pre>
 
 <p>Of course, not all of us have the Intel GPU on board. PWM usually appears on
