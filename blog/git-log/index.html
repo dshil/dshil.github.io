@@ -9,10 +9,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Dmitriy Shilin">
-<meta name="description" content="I always do git log and explore what changes were made by other developers. It is my habit and I don&rsquo;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy.">
+<meta name="description" content="I always do git log and explore what changes were made by other developers. It is my habit and I don&#39;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy.">
 
 <meta property="og:title" content="Git log" />
-<meta property="og:description" content="I always do git log and explore what changes were made by other developers. It is my habit and I don&rsquo;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy." />
+<meta property="og:description" content="I always do git log and explore what changes were made by other developers. It is my habit and I don&#39;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dshil.github.io/blog/git-log/" />
 <meta property="article:published_time" content="2018-12-15T07:37:30+03:00" />
@@ -43,9 +43,9 @@
 
 
     
-    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2019-09-05%2012%3a58%3a39.33224994%20%2b0300%20MSK%20m%3d%2b0.062800710">
-    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2019-09-05%2012%3a58%3a39.33224994%20%2b0300%20MSK%20m%3d%2b0.062800710">
-    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2019-09-05%2012%3a58%3a39.33224994%20%2b0300%20MSK%20m%3d%2b0.062800710">
+    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2020-03-14%2012%3a25%3a30.937984316%20%2b0300%20MSK%20m%3d%2b0.034996046">
+    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2020-03-14%2012%3a25%3a30.937984316%20%2b0300%20MSK%20m%3d%2b0.034996046">
+    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2020-03-14%2012%3a25%3a30.937984316%20%2b0300%20MSK%20m%3d%2b0.034996046">
     
 
 
@@ -163,63 +163,53 @@
                 </div>
             </div>
             <div class="markdown">
-                
-
-<p>I always do <code>git log</code> and explore what changes were made by other developers.
-It is my habit and I don&rsquo;t expect that other developers do the same. But I
+                <p>I always do <code>git log</code> and explore what changes were made by other developers.
+It is my habit and I don't expect that other developers do the same. But I
 would totally be very happy if a git history will become more clean and
 understandable not only in big open-source projects but also in a majority
 of company in the software development industry. You need to follow some
 rules to keep your git history healthy.</p>
-
 <h2 id="better-commit-message">Better Commit Message</h2>
-
 <ul>
 <li>Commit messages are written for the people not just because they must be
 written to be able to merge changes into the main line.</li>
 <li>Commit should have the structure:
-
 <ul>
 <li>title:
-
 <ul>
 <li>One line.</li>
 <li>Informative.</li>
 <li>No more than 80 characters per line.</li>
-</ul></li>
+</ul>
+</li>
 <li>body:
-
 <ul>
 <li>Must be separated from the title by one space.</li>
 <li>More detailed description of the title (if it is really needed).</li>
 <li>No more than 80 characters per line.</li>
-</ul></li>
+</ul>
+</li>
 <li>reference:
-
 <ul>
 <li>Must be separated from the body by one space.</li>
 <li>Contains the reference to related issues, commits, requests, mails,
 people, etc.</li>
 <li>No more than 80 characters.</li>
-</ul></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="find-your-git-model">Find your git model</h2>
-
 <p>There are a huge amount of ways how you can organize your life with git but
-I&rsquo;ll explore two very simple and commonly used.</p>
-
+I'll explore two very simple and commonly used.</p>
 <h3 id="git-only-model">Git only model</h3>
-
 <ul>
 <li>Each team member writes very informative and understandable commit messages.</li>
 <li>Each commit may contain some reference to the external discussions: mailing
 lists, bugzilla (optional).</li>
 </ul>
-
 <p>Example:</p>
-
 <pre><code>Use -filelist with macOS linker
 
 macOS's linker can take a -filelist argument, in place of taking the
@@ -237,50 +227,37 @@ arguments are separated by newlines rather than spaces.
 [1]: https://somereference
 
 Reviewed-by: FooMan
-</code></pre>
-
-<h3 id="mixed-model-git-bugzilla-mailing-lists">Mixed Model (Git + Bugzilla + Mailing Lists)</h3>
-
+</code></pre><h3 id="mixed-model-git--bugzilla--mailing-lists">Mixed Model (Git + Bugzilla + Mailing Lists)</h3>
 <ul>
 <li>Each team member writes very short and understandable messages.</li>
 <li>Each commit message contains a link to the issue tracker.</li>
 </ul>
-
 <p>Example:</p>
-
 <pre><code>Use -filelist with macOS linker
 
 Relates: #tdf83
 Resolves: #tdf299
-</code></pre>
-
-<p>I mostly prefer to use the mixed model. It&rsquo;s very great to see the long
+</code></pre><p>I mostly prefer to use the mixed model. It's very great to see the long
 commit messages with a lot of tech details and interesting things but
-usually it&rsquo;s hard to put all info into one commit message because of
+usually it's hard to put all info into one commit message because of
 different discussions in ML (mailing list), issue tracker, etc.</p>
-
 <h2 id="not-all-have-to-be-masters">Not all have to be masters</h2>
-
 <p>There is a cargo cult in some company that all changes must be pushed to the
-main line only after +2 review points. In another companies developers don&rsquo;t
-care and just push changes directly to the main line because it&rsquo;s easier
+main line only after +2 review points. In another companies developers don't
+care and just push changes directly to the main line because it's easier
 and they are used to do so. I want to briefly explore pros and cons of
 these approaches.</p>
-
 <h3 id="all-are-masters">All are masters</h3>
-
 <ul>
-<li>Usually people don&rsquo;t reread the changes. They make a patch, test it and
+<li>Usually people don't reread the changes. They make a patch, test it and
 push it to the main line.</li>
 <li>The codebase probably has some kind of smell because all are masters and
 only one approach of solving a problem or designing a system can be
 right - our own.</li>
-<li>It&rsquo;s fast because we don&rsquo;t spend time for reviewing other changes.</li>
-<li>It&rsquo;s fast because we don&rsquo;t need to wait until somebody will review us.</li>
+<li>It's fast because we don't spend time for reviewing other changes.</li>
+<li>It's fast because we don't need to wait until somebody will review us.</li>
 </ul>
-
 <h3 id="there-are-only-several-masters">There are only several masters</h3>
-
 <ul>
 <li>Young developers learn how to write clean and simple code from the more
 experienced developers.</li>
@@ -289,9 +266,7 @@ experienced developers.</li>
 <li>Procedure of code rereading before merging it allows to fix some typos,
 simplify things, remove debug messages.</li>
 </ul>
-
 <h2 id="instead-of-conclusion">Instead of conclusion</h2>
-
 <p>There are a lot of discussions, cargo cults around successful git models.
 I just analyze some approaches from the previous experience of working in
 different companies and contributing to various open-source projects.
@@ -299,12 +274,10 @@ I enforce that all changes must be reviewed before merging to the
 main line. But is is my rule and you can be probably very happy without
 this annoying review. Try different approaches and find which of them
 is more suitable for your team.</p>
-
-<p>I don&rsquo;t provide the complete template of &ldquo;good commit message&rdquo; because
-there are resources that did it for me. I&rsquo;d highly recommend you to
+<p>I don't provide the complete template of &ldquo;good commit message&rdquo; because
+there are resources that did it for me. I'd highly recommend you to
 read <a href="https://github.com/torvalds/subsurface-for-dirk/blob/a48494d2fbed58c751e9b7e8fbff88582f9b2d02/README#L88">Linus rules for commit messages</a> and <a href="https://chris.beams.io/posts/git-commit/">Why commit
 message is so important</a>.</p>
-
 <p>After all, all you have left from the developer is a commit message. And when
 bad days come I hope this message will help you to solve the most annoying
 bug.</p>

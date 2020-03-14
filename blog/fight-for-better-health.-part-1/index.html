@@ -11,10 +11,10 @@
 <meta name="author" content="Dmitriy Shilin">
 <meta name="description" content="Preface For a long time, I was working in the office in front of my lovely Dell 24 Monitor but recently I have been starting working more in front of my laptop. It is MacBook Pro 17 Late 2011, very old guy with Fedora on a board. Suddenly I started having more and more headaches. It was sad and I decided to visit a doctor. Well, we made tons of analysis, checked eyes, checked vessels of the brain, checked the neck and a lot more and surprisingly we did not find anything.">
 
-<meta property="og:title" content="Linux: fight for better health" />
+<meta property="og:title" content="Fight for better health. Part 1" />
 <meta property="og:description" content="Preface For a long time, I was working in the office in front of my lovely Dell 24 Monitor but recently I have been starting working more in front of my laptop. It is MacBook Pro 17 Late 2011, very old guy with Fedora on a board. Suddenly I started having more and more headaches. It was sad and I decided to visit a doctor. Well, we made tons of analysis, checked eyes, checked vessels of the brain, checked the neck and a lot more and surprisingly we did not find anything." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dshil.github.io/blog/linux-fight-for-better-health/" />
+<meta property="og:url" content="https://dshil.github.io/blog/fight-for-better-health.-part-1/" />
 <meta property="article:published_time" content="2019-03-16T09:53:26+03:00" />
 <meta property="article:modified_time" content="2019-03-16T09:53:26+03:00" />
 
@@ -22,10 +22,10 @@
 <title>
 
 
-     Linux: fight for better health 
+     Fight for better health. Part 1 
 
 </title>
-<link rel="canonical" href="https://dshil.github.io/blog/linux-fight-for-better-health/">
+<link rel="canonical" href="https://dshil.github.io/blog/fight-for-better-health.-part-1/">
 
 
 
@@ -43,9 +43,9 @@
 
 
     
-    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2019-12-03%2013%3a40%3a33.655869781%20%2b0300%20MSK%20m%3d%2b0.035244696">
-    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2019-12-03%2013%3a40%3a33.655869781%20%2b0300%20MSK%20m%3d%2b0.035244696">
-    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2019-12-03%2013%3a40%3a33.655869781%20%2b0300%20MSK%20m%3d%2b0.035244696">
+    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2020-03-14%2012%3a25%3a30.939271994%20%2b0300%20MSK%20m%3d%2b0.036283745">
+    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2020-03-14%2012%3a25%3a30.939271994%20%2b0300%20MSK%20m%3d%2b0.036283745">
+    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2020-03-14%2012%3a25%3a30.939271994%20%2b0300%20MSK%20m%3d%2b0.036283745">
     
 
 
@@ -147,7 +147,7 @@
                 <div class="title-container">
                     <div class="page-heading">
 
-    Linux: fight for better health
+    Fight for better health. Part 1
 
 </div>
 
@@ -163,10 +163,7 @@
                 </div>
             </div>
             <div class="markdown">
-                
-
-<h2 id="preface">Preface</h2>
-
+                <h2 id="preface">Preface</h2>
 <p>For a long time, I was working in the office in front of my lovely
 Dell 24 Monitor but recently I have been starting working more in front of
 my laptop. It is MacBook Pro 17 Late 2011, very old guy with Fedora on a board.
@@ -177,42 +174,31 @@ we did not find anything. Doctors said that I just tired and I need to make
 a break and take some medications. I did it and but it did not help. I was not
 able to work in front of my laptop for longer than 25 minutes. It was a time
 when the real fight has begun.</p>
-
 <h2 id="pulse-wave-modulation">Pulse Wave Modulation</h2>
-
 <p>One day I found a <a href="https://www.reddit.com/r/linux4noobs/comments/2ygdpc/eyestrain_problems_while_using_linux/">post</a> on Reddit where one guy had the similar
 problem that I had. From this post, I got the idea that some people have
 headaches because of PWM (pulse wave modulation). PWM is a mechanism that
 controls the backlight of monitors by turning on and off led flashlights very
 quickly. Happy owners of the Intel GPU card <a href="https://wiki.archlinux.org/index.php/backlight#Troubleshooting">can control</a> this annoying PWM.</p>
-
 <p>For the first time, I checked the current PWM frequency and it was 0x0:</p>
-
-<pre><code class="language-sh">sudo intel_reg read 0xC8254
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo intel_reg read 0xC8254
 0x0
-</code></pre>
-
-<p>From this result, you can get the idea. When you decrease the brightness of the
+</code></pre></div><p>From this result, you can get the idea. When you decrease the brightness of the
 screen to the minimum level you will be under higher PWM influence. For some
 people it is OK but for a little group of people, including me, it will cause
 eye stress and headaches. As a result, we need to <a href="http://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html">eliminate LED screen flicker</a>
 when we work in front of a display with a brightness which differs from the
 maximum (PWM will be eliminated automatically for the maximum brightness).
 You just need to choose the desired PWM frequency:</p>
-
-<pre><code class="language-sh">sudo intel_reg write 0xC8254 0x3d103d1 # 1000Hz in my case
-</code></pre>
-
-<p>Of course, not all of us have the Intel GPU on board. PWM usually appears on
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo intel_reg write 0xC8254 0x3d103d1 <span style="color:#75715e"># 1000Hz in my case</span>
+</code></pre></div><p>Of course, not all of us have the Intel GPU on board. PWM usually appears on
 middle or low brightness level. As a result, you can set the brightness level to
 the maximum and use <a href="http://jonls.dk/redshift/">redshift</a> or <a href="https://iristech.co/how-iris-reduces-pwm-flicker-medium/">iris</a> to adjust the brightness. In reality, these
 tools do not change the hardware brightness, they adjust the gamma settings
 instead. For some people, it might work. Personally, I do not like this approach
 because I have even more headaches because of mixing maximum brightness and
 gamma change.</p>
-
 <h2 id="screen">Screen</h2>
-
 <p>So far, so good. We fixed the PWM problem and as a result, I felt much better
 but some level of headaches was still there. As you remember I have a Fedora
 Linux on the board with I3 tiling window manager and I did not perform any
@@ -220,40 +206,31 @@ screen and fonts adjusting after replacing the original OS X operation system.
 As you might understand my fonts were no more than terrible. For development
 I use <a href="http://terminus-font.sourceforge.net/">Terminus</a> and I am pretty happy with it but the remaining system looked
 very awful. So, take a hammer in a hand and make own life more pleasant.</p>
-
 <h3 id="dpi">DPI</h3>
-
 <p>XServer usually sets some default value, e.g., 96 is frequently used. All of us
 have various displays that have different resolution, hight, width parameters.
-As a result, we can&rsquo;t simply use the same DPI value just because it is somewhere
+As a result, we can't simply use the same DPI value just because it is somewhere
 near our true DPI. There is a good <a href="https://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi">instruction</a> for DPI calculation. After doing short math I got the value 110 for my display parameters.
 After all, you need to ensure that the following commands produce the same DPI:</p>
-
-<pre><code class="language-sh">xdpyinfo | grep dots
-# resolution:    110x110 dots per inch
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">xdpyinfo | grep dots
+<span style="color:#75715e"># resolution:    110x110 dots per inch</span>
 
 xrdb -query | grep dpi
-# Xft.dpi:        110
+<span style="color:#75715e"># Xft.dpi:        110</span>
 
 grep DPI /var/log/Xorg.0.log
-# [    26.888] (++) RADEON(0): DPI set to (110, 110)
-# [    27.114] (++) modeset(G0): DPI set to (110, 110)
-</code></pre>
-
-<h3 id="font-rendering">Font Rendering</h3>
-
+<span style="color:#75715e"># [    26.888] (++) RADEON(0): DPI set to (110, 110)</span>
+<span style="color:#75715e"># [    27.114] (++) modeset(G0): DPI set to (110, 110)</span>
+</code></pre></div><h3 id="font-rendering">Font Rendering</h3>
 <p>We adjusted the DPI. From the personal view, I did not see a huge difference
 but probably my sensitive eyes recognized some changes. The fonts rendering was
 still terrible. After a little bit of googling, I found an <a href="https://wiki.manjaro.org/index.php?title=Improve_Font_Rendering">instruction</a>
 for font rendering. After applying all suggested settings
 the fonts rendering became very neat and my eyes started to get less stress.</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>You must understand your system to survive. After playing a little bit with
 settings I have found some patterns that allow me to work longer in
 front of my laptop without any injuries:</p>
-
 <ul>
 <li>Zero glare on the screen</li>
 <li>Use low contrast themes everywhere (vim, urxvt, mutt and friends)</li>
@@ -262,7 +239,6 @@ front of my laptop without any injuries:</p>
 <li>Use 100% gamma</li>
 <li>Use 1000Hz PWM frequency</li>
 </ul>
-
 <p>I still have a little bit of eye stress and headaches but I think that it is
 a recovery period.</p>
 
