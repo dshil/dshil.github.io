@@ -43,9 +43,9 @@
 
 
     
-    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2020-03-14%2012%3a25%3a30.937837784%20%2b0300%20MSK%20m%3d%2b0.034849537">
-    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2020-03-14%2012%3a25%3a30.937837784%20%2b0300%20MSK%20m%3d%2b0.034849537">
-    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2020-03-14%2012%3a25%3a30.937837784%20%2b0300%20MSK%20m%3d%2b0.034849537">
+    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2020-03-14%2012%3a36%3a15.331679746%20%2b0300%20MSK%20m%3d%2b0.034327148">
+    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2020-03-14%2012%3a36%3a15.331679746%20%2b0300%20MSK%20m%3d%2b0.034327148">
+    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2020-03-14%2012%3a36%3a15.331679746%20%2b0300%20MSK%20m%3d%2b0.034327148">
     
 
 
@@ -224,10 +224,10 @@ Windows environment. I will just summarize the most important of them.</p>
 <h3 id="tuning-git-configuration">Tuning Git Configuration</h3>
 <p>There are 3 magic options that should be turned on to solve all your problems,
 but before tuning any options ensure that you really have any problems:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git config --global core.preloadindex true
+<pre><code>git config --global core.preloadindex true
 git config --global core.fscache true
-git config --global gc.auto <span style="color:#ae81ff">256</span>
-</code></pre></div><p>Let's explore what each option does:</p>
+git config --global gc.auto 256
+</code></pre><p>Let's explore what each option does:</p>
 <ul>
 <li>core.preloadindex enables parallel index preload for operations like <code>git diff</code>.
 Defaults to true.</li>

@@ -43,9 +43,9 @@
 
 
     
-    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2020-03-14%2012%3a25%3a30.939271994%20%2b0300%20MSK%20m%3d%2b0.036283745">
-    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2020-03-14%2012%3a25%3a30.939271994%20%2b0300%20MSK%20m%3d%2b0.036283745">
-    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2020-03-14%2012%3a25%3a30.939271994%20%2b0300%20MSK%20m%3d%2b0.036283745">
+    <link rel="stylesheet" href="https://dshil.github.io/css/reset.css?t=2020-03-14%2012%3a36%3a15.332062254%20%2b0300%20MSK%20m%3d%2b0.034709656">
+    <link rel="stylesheet" href="https://dshil.github.io/css/pygments.css?t=2020-03-14%2012%3a36%3a15.332062254%20%2b0300%20MSK%20m%3d%2b0.034709656">
+    <link rel="stylesheet" href="https://dshil.github.io/css/main.css?t=2020-03-14%2012%3a36%3a15.332062254%20%2b0300%20MSK%20m%3d%2b0.034709656">
     
 
 
@@ -181,17 +181,17 @@ headaches because of PWM (pulse wave modulation). PWM is a mechanism that
 controls the backlight of monitors by turning on and off led flashlights very
 quickly. Happy owners of the Intel GPU card <a href="https://wiki.archlinux.org/index.php/backlight#Troubleshooting">can control</a> this annoying PWM.</p>
 <p>For the first time, I checked the current PWM frequency and it was 0x0:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo intel_reg read 0xC8254
+<pre><code>sudo intel_reg read 0xC8254
 0x0
-</code></pre></div><p>From this result, you can get the idea. When you decrease the brightness of the
+</code></pre><p>From this result, you can get the idea. When you decrease the brightness of the
 screen to the minimum level you will be under higher PWM influence. For some
 people it is OK but for a little group of people, including me, it will cause
 eye stress and headaches. As a result, we need to <a href="http://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html">eliminate LED screen flicker</a>
 when we work in front of a display with a brightness which differs from the
 maximum (PWM will be eliminated automatically for the maximum brightness).
 You just need to choose the desired PWM frequency:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo intel_reg write 0xC8254 0x3d103d1 <span style="color:#75715e"># 1000Hz in my case</span>
-</code></pre></div><p>Of course, not all of us have the Intel GPU on board. PWM usually appears on
+<pre><code>sudo intel_reg write 0xC8254 0x3d103d1 # 1000Hz in my case
+</code></pre><p>Of course, not all of us have the Intel GPU on board. PWM usually appears on
 middle or low brightness level. As a result, you can set the brightness level to
 the maximum and use <a href="http://jonls.dk/redshift/">redshift</a> or <a href="https://iristech.co/how-iris-reduces-pwm-flicker-medium/">iris</a> to adjust the brightness. In reality, these
 tools do not change the hardware brightness, they adjust the gamma settings
@@ -212,16 +212,16 @@ have various displays that have different resolution, hight, width parameters.
 As a result, we can't simply use the same DPI value just because it is somewhere
 near our true DPI. There is a good <a href="https://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi">instruction</a> for DPI calculation. After doing short math I got the value 110 for my display parameters.
 After all, you need to ensure that the following commands produce the same DPI:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">xdpyinfo | grep dots
-<span style="color:#75715e"># resolution:    110x110 dots per inch</span>
+<pre><code>xdpyinfo | grep dots
+# resolution:    110x110 dots per inch
 
 xrdb -query | grep dpi
-<span style="color:#75715e"># Xft.dpi:        110</span>
+# Xft.dpi:        110
 
 grep DPI /var/log/Xorg.0.log
-<span style="color:#75715e"># [    26.888] (++) RADEON(0): DPI set to (110, 110)</span>
-<span style="color:#75715e"># [    27.114] (++) modeset(G0): DPI set to (110, 110)</span>
-</code></pre></div><h3 id="font-rendering">Font Rendering</h3>
+# [    26.888] (++) RADEON(0): DPI set to (110, 110)
+# [    27.114] (++) modeset(G0): DPI set to (110, 110)
+</code></pre><h3 id="font-rendering">Font Rendering</h3>
 <p>We adjusted the DPI. From the personal view, I did not see a huge difference
 but probably my sensitive eyes recognized some changes. The fonts rendering was
 still terrible. After a little bit of googling, I found an <a href="https://wiki.manjaro.org/index.php?title=Improve_Font_Rendering">instruction</a>
