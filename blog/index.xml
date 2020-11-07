@@ -6,11 +6,7 @@
     <description>Recent content in Blog on Dmitriy Shilin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 02 Aug 2019 12:47:46 +0300</lastBuildDate>
-    
-	<atom:link href="https://dshil.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 02 Aug 2019 12:47:46 +0300</lastBuildDate><atom:link href="https://dshil.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fight for better health. Part 2</title>
       <link>https://dshil.github.io/blog/fight-for-better-health.-part-2/</link>
@@ -45,7 +41,7 @@
       <pubDate>Sat, 15 Dec 2018 07:37:30 +0300</pubDate>
       
       <guid>https://dshil.github.io/blog/git-log/</guid>
-      <description>I always do git log and explore what changes were made by other developers. It is my habit and I don&#39;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy.</description>
+      <description>I always do git log and explore what changes were made by other developers. It is my habit and I don&amp;rsquo;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy.</description>
     </item>
     
     <item>
@@ -56,7 +52,7 @@
       <guid>https://dshil.github.io/blog/ancient-mails/</guid>
       <description>Most of the software companies have migrated to the very convenient and cute messenger, called Slack.
 To be the decent man I also liked it for a first time. It gave me the feeling of involving in the whole company life. I was a superhero observing different tasks, simultaneously solving different issues.
-Once I realized that it&#39;s so convenient that I was simply chatting with the college about random stuff. In that evening I had a bell ringing in my head that something wrong with the model that most developers definitely love.</description>
+Once I realized that it&amp;rsquo;s so convenient that I was simply chatting with the college about random stuff. In that evening I had a bell ringing in my head that something wrong with the model that most developers definitely love.</description>
     </item>
     
     <item>
@@ -67,7 +63,7 @@ Once I realized that it&#39;s so convenient that I was simply chatting with the 
       <guid>https://dshil.github.io/blog/missed-os-x-clock-guide/</guid>
       <description>Table of contents
  Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
-When it comes to high-resolution time management in OS X wouldn&#39;t it be a dreamy to have the following routines:
+When it comes to high-resolution time management in OS X wouldn&amp;rsquo;t it be a dreamy to have the following routines:
  Receive current monotonically incrementing time value. Sleep for a specified interval.</description>
     </item>
     
