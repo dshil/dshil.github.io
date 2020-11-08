@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Dmitriy Shilin</title>
+    <title>Blogs on Dmitriy Shilin</title>
     <link>https://dshil.github.io/blog/</link>
-    <description>Recent content in Blog on Dmitriy Shilin</description>
+    <description>Recent content in Blogs on Dmitriy Shilin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 02 Aug 2019 12:47:46 +0300</lastBuildDate><atom:link href="https://dshil.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fight for better health. Part 2</title>
-      <link>https://dshil.github.io/blog/fight-for-better-health.-part-2/</link>
+      <link>https://dshil.github.io/blog/linux_fight_for_better_health_2/</link>
       <pubDate>Fri, 02 Aug 2019 12:47:46 +0300</pubDate>
       
-      <guid>https://dshil.github.io/blog/fight-for-better-health.-part-2/</guid>
+      <guid>https://dshil.github.io/blog/linux_fight_for_better_health_2/</guid>
       <description>I wrote an article about strange headaches that I had. I made an assumption that it was PWM. So, I had decided to overcome this issue. My plan was the following:
  Buy a new laptop Setup all PWM related settings Setup fonts + reduce the glare effect  I bought a new laptop, Lenovo Thinkpad X1 Carbon, with a brilliant display. Then I performed all the required setup steps and started to wait if the headaches would be gone.</description>
     </item>
     
     <item>
       <title>Fight for better health. Part 1</title>
-      <link>https://dshil.github.io/blog/fight-for-better-health.-part-1/</link>
+      <link>https://dshil.github.io/blog/linux_fight_for_better_health/</link>
       <pubDate>Sat, 16 Mar 2019 09:53:26 +0300</pubDate>
       
-      <guid>https://dshil.github.io/blog/fight-for-better-health.-part-1/</guid>
+      <guid>https://dshil.github.io/blog/linux_fight_for_better_health/</guid>
       <description>Preface For a long time, I was working in the office in front of my lovely Dell 24 Monitor but recently I have been starting working more in front of my laptop. It is MacBook Pro 17 Late 2011, very old guy with Fedora on a board. Suddenly I started having more and more headaches. It was sad and I decided to visit a doctor. Well, we made tons of analysis, checked eyes, checked vessels of the brain, checked the neck and a lot more and surprisingly we did not find anything.</description>
     </item>
     
     <item>
       <title>Git: tuning performance on Windows</title>
-      <link>https://dshil.github.io/blog/git-tuning-performance-on-windows/</link>
+      <link>https://dshil.github.io/blog/gitwin/</link>
       <pubDate>Sun, 30 Dec 2018 15:13:34 +0300</pubDate>
       
-      <guid>https://dshil.github.io/blog/git-tuning-performance-on-windows/</guid>
+      <guid>https://dshil.github.io/blog/gitwin/</guid>
       <description>Preface An internet was designed in a such way that almost nobody remembers the days when there is no internet. People just got used to this phenomenon, like an air, in the same way, there are some people who remember those days and we should protect them as the UNESCO area. This feeling that the internet has been at all times shows that it was very well-designed and later - implemented.</description>
     </item>
     
     <item>
       <title>Git log</title>
-      <link>https://dshil.github.io/blog/git-log/</link>
+      <link>https://dshil.github.io/blog/gitlog/</link>
       <pubDate>Sat, 15 Dec 2018 07:37:30 +0300</pubDate>
       
-      <guid>https://dshil.github.io/blog/git-log/</guid>
+      <guid>https://dshil.github.io/blog/gitlog/</guid>
       <description>I always do git log and explore what changes were made by other developers. It is my habit and I don&amp;rsquo;t expect that other developers do the same. But I would totally be very happy if a git history will become more clean and understandable not only in big open-source projects but also in a majority of company in the software development industry. You need to follow some rules to keep your git history healthy.</description>
     </item>
     
     <item>
       <title>Ancient mails</title>
-      <link>https://dshil.github.io/blog/ancient-mails/</link>
+      <link>https://dshil.github.io/blog/email_as_in_olden_days/</link>
       <pubDate>Sun, 04 Mar 2018 05:56:39 +0300</pubDate>
       
-      <guid>https://dshil.github.io/blog/ancient-mails/</guid>
+      <guid>https://dshil.github.io/blog/email_as_in_olden_days/</guid>
       <description>Most of the software companies have migrated to the very convenient and cute messenger, called Slack.
 To be the decent man I also liked it for a first time. It gave me the feeling of involving in the whole company life. I was a superhero observing different tasks, simultaneously solving different issues.
 Once I realized that it&amp;rsquo;s so convenient that I was simply chatting with the college about random stuff. In that evening I had a bell ringing in my head that something wrong with the model that most developers definitely love.</description>
