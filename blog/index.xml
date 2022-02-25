@@ -6,26 +6,7 @@
     <description>Recent content in Blogs on Dmitriy Shilin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 02 Aug 2019 12:47:46 +0300</lastBuildDate><atom:link href="https://dshil.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Fight for better health. Part 2</title>
-      <link>https://dshil.github.io/blog/linux_fight_for_better_health_2/</link>
-      <pubDate>Fri, 02 Aug 2019 12:47:46 +0300</pubDate>
-      
-      <guid>https://dshil.github.io/blog/linux_fight_for_better_health_2/</guid>
-      <description>I wrote an article about strange headaches that I had. I made an assumption that it was PWM. So, I had decided to overcome this issue. My plan was the following:
- Buy a new laptop Setup all PWM related settings Setup fonts + reduce the glare effect  I bought a new laptop, Lenovo Thinkpad X1 Carbon, with a brilliant display. Then I performed all the required setup steps and started to wait if the headaches would be gone.</description>
-    </item>
-    
-    <item>
-      <title>Fight for better health. Part 1</title>
-      <link>https://dshil.github.io/blog/linux_fight_for_better_health/</link>
-      <pubDate>Sat, 16 Mar 2019 09:53:26 +0300</pubDate>
-      
-      <guid>https://dshil.github.io/blog/linux_fight_for_better_health/</guid>
-      <description>Preface For a long time, I was working in the office in front of my lovely Dell 24 Monitor but recently I have been starting working more in front of my laptop. It is MacBook Pro 17 Late 2011, very old guy with Fedora on a board. Suddenly I started having more and more headaches. It was sad and I decided to visit a doctor. Well, we made tons of analysis, checked eyes, checked vessels of the brain, checked the neck and a lot more and surprisingly we did not find anything.</description>
-    </item>
-    
+    <lastBuildDate>Sun, 30 Dec 2018 15:13:34 +0300</lastBuildDate><atom:link href="https://dshil.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git: tuning performance on Windows</title>
       <link>https://dshil.github.io/blog/gitwin/</link>
