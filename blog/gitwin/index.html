@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <link rel="preload" href="https://dshil.github.io/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://dshil.github.io/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://dshil.github.io/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="https://dshil.github.io/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Git: tuning performance on Windows | Dmitriy Shilin</title>
+  <link rel = 'canonical' href = 'https://dshil.github.io/blog/gitwin/'>
+  <meta name="description" content="Random notes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Git: tuning performance on Windows" />
+<meta property="og:description" content="Preface An internet was designed in a such way that almost nobody remembers the days when there is no internet. People just got used to this phenomenon, like an air, in the same way, there are some people who remember those days and we should protect them as the UNESCO area. This feeling that the internet has been at all times shows that it was very well-designed and later - implemented." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dshil.github.io/blog/gitwin/" />
+<meta property="article:published_time" content="2018-12-30T15:13:34+03:00" />
+<meta property="article:modified_time" content="2018-12-30T15:13:34+03:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git: tuning performance on Windows"/>
+<meta name="twitter:description" content="Preface An internet was designed in a such way that almost nobody remembers the days when there is no internet. People just got used to this phenomenon, like an air, in the same way, there are some people who remember those days and we should protect them as the UNESCO area. This feeling that the internet has been at all times shows that it was very well-designed and later - implemented."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://dshil.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://dshil.github.io/images/favicon.ico" />
+
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-182319870-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://dshil.github.io/">
+  
+    <div id="logo" style="background-image: url(https://dshil.github.io/images/profile.png)"></div>
+  
+  <div id="title">
+    <h1>Dmitriy Shilin</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+        <li><a href="https://dshil.github.io/">Home</a></li>
+      
+        <li><a href="https://dshil.github.io/blog/">Blog</a></li>
+      
+        <li><a href="https://dshil.github.io/talks/">Talks</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div class="content" itemprop="articleBody">
+  
+    <h2 id="preface">Preface</h2>
+<p>An internet was designed in a such way that almost nobody remembers the days
+when there is no internet. People just got used to this phenomenon, like an air,
+in the same way, there are some people who remember those days and we should
+protect them as the UNESCO area. This feeling that the internet has been at all
+times shows that it was very well-designed and later - implemented.</p>
+<p>In those days there wasn&rsquo;t such thing as a revision control system.
+<a href="https://en.wikipedia.org/wiki/Version_control">First of them</a> were implemented  not so long ago. As a result modern developers
+probably have never encountered the difficulties while working with them.
+Probably, some of you remember the story of the Linux Kernel community and
+BeetKeeper usage. For most of the developers it was a big pain in the ass.
+The Kernel was growing very fast and BeetKeeper was slowing down roughly at
+the same speed. One day Linus and <a href="https://en.wikipedia.org/wiki/Git">some guys from the Linux Kernel</a> built their
+own version control system and gave it the great name: git - the stupid content
+tracker which is the standard de facto in our days. Git also was designed in a
+such way that most of the developers don&rsquo;t remember the days when there is no Git.
+Git is treated as a perfect knife that will kill any enemy without any problems.
+For most projects it is actually the perfect tool to work with and most of the
+developers have never faced any problems with it.</p>
+<p>Probably one day you will start working on a very large codebase and realize
+that simple <code>git diff</code> or <code>git status</code> takes more than 30 seconds and usual
+instant feedback loop (make some changes - save - see the changes) will be
+broken. You will feel angry because your lovely flow feeling will be broken.
+Most of the C++ developers are very familiar with it: start the compilation
+and go for a lunch. I was firstly bit by this issue during LibreOffice
+development for Windows.</p>
+<h2 id="environment">Environment</h2>
+<p>Before tuning any options it is very important to realize what is the initial
+problem. Let&rsquo;s begin with an environment:</p>
+<h3 id="windows-partition">Windows Partition</h3>
+<ul>
+<li>OS: Windows 10</li>
+<li>FS: NTFS</li>
+<li>Hard drive: SSD Kingston 480 GB</li>
+<li>POSIX-compatible environment: Cygwin</li>
+</ul>
+<h3 id="linux-partition">Linux Partition</h3>
+<ul>
+<li>OS: Fedora 29</li>
+<li>FS: Ext4</li>
+<li>Hard drive: SSD Kingston 480 GB</li>
+</ul>
+<h3 id="ntfs-or-ext4">NTFS or EXT4</h3>
+<p>I am not an expert in the file system domain and can&rsquo;t properly explain why
+there are zero problems with Git on EXT4 file system and there is a huge
+performance degradation on NTFS. It doesn&rsquo;t mean that NTFS is worse than EXT4
+because it depends on the operations and environments. I have problems with Git
+using Cygwin but probably it is not a case. If you are curious about
+benchmarking different FS, the following links may be a good starting point:</p>
+<ul>
+<li><a href="https://www.quora.com/Why-does-Windows-still-use-NTFS-Why-not-ext4-the-file-system-for-Linux-since-it-actively-prevents-disk-fragmentation">Why does Windows still use NTFS? Why not ext4?</a></li>
+<li><a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=Linux-4.7-FS-5-Way">Linux 4.7 - Btrfs vs. EXT4 vs. F2FS vs. XFS vs. NTFS Benchmarks</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_file_systems">Comparison of file systems</a></li>
+</ul>
+<h2 id="tuning-time">Tuning Time</h2>
+<p>&ldquo;Git is slow on Windows&rdquo; is a very popular topic in internet and there are a
+lot of articles describing how to increase the performance of your Git in the
+Windows environment. I will just summarize the most important of them.</p>
+<h3 id="tuning-git-configuration">Tuning Git Configuration</h3>
+<p>There are 3 magic options that should be turned on to solve all your problems,
+but before tuning any options ensure that you really have any problems:</p>
+<pre><code>git config --global core.preloadindex true
+git config --global core.fscache true
+git config --global gc.auto 256
+</code></pre><p>Let&rsquo;s explore what each option does:</p>
+<ul>
+<li>core.preloadindex enables parallel index preload for operations like <code>git diff</code>.
+Defaults to true.</li>
+<li>core.fscache enables file system cache. It is useful only for Windows.</li>
+<li>gc.auto minimizes the number of files under ./git directory.
+Defaults to 6700.</li>
+</ul>
+<p>For more info: <code>man git config</code> and <a href="https://stackoverflow.com/questions/4485059/git-bash-is-extremely-slow-on-windows-7-x64">1</a>, <a href="https://blog.praveen.science/solution-to-git-bash-is-very-slow-in-windows/">2</a>, <a href="https://github.com/msysgit/msysgit/wiki/Diagnosing-why-Git-is-so-slow">3</a></p>
+<h3 id="cygwin-vs-git-for-windows">Cygwin vs Git for Windows</h3>
+<p>If your project doesn&rsquo;t depend on the Cygwin environment and you just need the
+git, I would highly recomment to use <a href="https://git-scm.com/download/win">Git For Windows</a> .</p>
+<p>In comparison to Cygwin, Git for Windows doesn&rsquo;t have any performance issue
+for a huge codebase and all git commands like <code>git status</code>, <code>git stash</code>,
+<code>git commit</code> work very fast.</p>
+<h3 id="tuning-development-workflow">Tuning Development Workflow</h3>
+<p>When Cygwin is only the choice, you still have some options that will allow
+you to speed up your Git workflow. A lot of techniques are described in
+<a href="https://www.atlassian.com/blog/git/handle-big-repositories-git">managing large repositories with Git</a> .
+I just picked some of them and adopted my development environment in the
+following way:</p>
+<ul>
+<li>No need to clone the repository with the full Git history because it can be
+very huge, e.g., for LibreOffice project, <code>git rev-list --count HEAD</code> equals
+to 432192 commits. Specify the number of commits you are interested in
+by <code>--depth</code> option during the clone. From the other side, the shorter the
+history, the less chance of getting the value from the <code>git blame</code> and <code>git log</code>.</li>
+<li>No need to run <code>git status</code>, <code>git diff</code> for the top level path of your
+repository. You can specify the only changed directory. As a result you
+should think carefully about splitting your changes into several commits that
+reduce the scope of the changes per commit.</li>
+<li>No need to run Git command each time you do some changes (I had this habit,
+probably you too), just slow down your development workflow and keep changes
+as small as possible that allow you to remember the recent activity.</li>
+</ul>
+
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Dmitriy Shilin 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="https://dshil.github.io/">Home</a></li>
+         
+        <li><a href="https://dshil.github.io/blog/">Blog</a></li>
+         
+        <li><a href="https://dshil.github.io/talks/">Talks</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=https://dshil.github.io/lib/font-awesome/css/all.min.css>
+<script src=https://dshil.github.io/lib/jquery/jquery.min.js></script>
+<script src=https://dshil.github.io/js/main.js></script>
+</html>
