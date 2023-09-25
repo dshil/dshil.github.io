@@ -31,7 +31,7 @@
       <pubDate>Sun, 28 Jan 2018 10:09:48 +0300</pubDate>
       
       <guid>https://dshil.github.io/talks/</guid>
-      <description> Go in TradingView (Rus)  </description>
+      <description> Go in TradingView (Rus) </description>
     </item>
     
     <item>
@@ -41,9 +41,9 @@
       
       <guid>https://dshil.github.io/blog/macos_missed_clock_guide/</guid>
       <description>Table of contents
- Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Deprecated Mach Clock API Links  Preface This is a story of a little fight with an obscure OS X clock API.
+Preface Motivation High resolution time management in Linux Mach Kernel Mach Clock API Deprecated Mach Clock API Links Preface This is a story of a little fight with an obscure OS X clock API.
 When it comes to high-resolution time management in OS X wouldn&amp;rsquo;t it be a dreamy to have the following routines:
- Receive current monotonically incrementing time value. Sleep for a specified interval.</description>
+Receive current monotonically incrementing time value. Sleep for a specified interval. Sleep until a specified time.</description>
     </item>
     
   </channel>
