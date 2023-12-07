@@ -46,5 +46,15 @@ When it comes to high-resolution time management in OS X wouldn&amp;rsquo;t it b
 Receive current monotonically incrementing time value. Sleep for a specified interval. Sleep until a specified time.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://dshil.github.io/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dshil.github.io/cv/</guid>
+      <description>Hello everyone! I&amp;rsquo;m an engineer with over 8 years of experience in software development. I have a strong software foundation, including a deep understanding of design and development flows, real-time constraints, concurrency. Throughout my career, I&amp;rsquo;ve specialised in building software systems with critical performance and reliability requirements.
+I&amp;rsquo;ve worked in a number of different areas. This has given me a broad perspective on how software is built. I&amp;rsquo;ve developed software for Linux and RTOS environments, with a strong focus on testability and maintainability.</description>
+    </item>
+    
   </channel>
 </rss>
