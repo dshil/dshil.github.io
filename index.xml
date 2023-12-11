@@ -8,11 +8,11 @@
     <language>en-US</language>
     <lastBuildDate>Sun, 30 Dec 2018 15:13:34 +0300</lastBuildDate><atom:link href="https://dshil.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CV/Resume</title>
-      <link>https://dshil.github.io/cv/</link>
+      <title>Resume</title>
+      <link>https://dshil.github.io/resume/</link>
       <pubDate>Thu, 07 Dec 2023 15:25:34 +0300</pubDate>
       
-      <guid>https://dshil.github.io/cv/</guid>
+      <guid>https://dshil.github.io/resume/</guid>
       <description>Hello everyone! I&amp;rsquo;m an engineer with over 8 years of experience in software development. I have a strong software foundation, including a deep understanding of design and development flows, real-time constraints, concurrency. Throughout my career, I&amp;rsquo;ve specialised in building software systems with critical performance and reliability requirements.
 I&amp;rsquo;ve worked in a number of different areas. This has given me a broad perspective on how software is built. I&amp;rsquo;ve developed software for Linux and RTOS environments, with a strong focus on testability and maintainability.</description>
     </item>
